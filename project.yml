@@ -48,6 +48,8 @@ targets:
     templates: 
       - MuuvTest
     sources:
+      - path: Mocks
+        createIntermediateGroups: true
       - path: MuuvTest/Configurations/Mock
         createIntermediateGroups: true
   Development:

@@ -48,6 +48,7 @@
 		A329BA007ABA75327F3B97BA /* HttpClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD4F5B1A98FCA78297AF7AF /* HttpClient.framework */; };
 		A7E82690133A1781BECFBCF6 /* ReqresClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055F30EE91BBF917894626D2 /* ReqresClient.framework */; };
 		B8B848C1DCEE583927135489 /* ReqresClientLive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 93354E6F8F65887863EE411A /* ReqresClientLive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B917F1FABAD7D6B4BCDCBADE /* get_users_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D4B45724D0EA786DFA41954 /* get_users_200.json */; };
 		BAF4E3FF29FAECE3D8E47B56 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = D18539C370F8170944DE67B8 /* Swinject */; };
 		BE463F24D6283570083C65DA /* ReqresClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961BB866046F837E57B77B88 /* ReqresClientMock.swift */; };
 		BF6235012258D9487E7C2D96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECD9749C4CA793BB148AE569 /* Assets.xcassets */; };
@@ -258,6 +259,7 @@
 		2DA16E7C85CA6CE3661982CF /* Production.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Production.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F04C99015AC77C9BD0BC058 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3C8981402C693E666C2FF495 /* HttpClientLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HttpClientLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D4B45724D0EA786DFA41954 /* get_users_200.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = get_users_200.json; sourceTree = "<group>"; };
 		3E7479D495AE18299404B7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4409AE345AC717F3A472DCA3 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		4C5D55B683FA0360580D62E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -456,12 +458,21 @@
 			path = HttpClient;
 			sourceTree = "<group>";
 		};
+		78BDE020A9E2A24EA973FB69 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				3D4B45724D0EA786DFA41954 /* get_users_200.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		7DE32013B9866684F1845268 = {
 			isa = PBXGroup;
 			children = (
 				E4317C6F4B3AE91A61186EA0 /* Clients */,
 				D4734F2F50E9FE1A983085FE /* Configs */,
 				04418ED1AC00D92203F8D46D /* Features */,
+				78BDE020A9E2A24EA973FB69 /* Mocks */,
 				E26BE574C8BABB23BB4C9210 /* MuuvTest */,
 				DC5BB7EEE87AFC4B04593C08 /* Products */,
 			);
@@ -840,6 +851,7 @@
 			files = (
 				BF6235012258D9487E7C2D96 /* Assets.xcassets in Resources */,
 				4E77F0622B76A66792006809 /* Preview Assets.xcassets in Resources */,
+				B917F1FABAD7D6B4BCDCBADE /* get_users_200.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
