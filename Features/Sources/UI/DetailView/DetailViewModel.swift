@@ -1,9 +1,13 @@
 import Combine
 import Foundation
 import ReqresClient
+import SwiftUI
 
 final class DetailViewModel: ObservableObject {
     @Published var user: User?
+    @Published var updatedName: String
+    @Published var updatedJob: String
+    @Published var isShowingUpdateView: Bool
 
     var isShowingLoadingView: Bool {
         user == nil
@@ -17,8 +21,12 @@ final class DetailViewModel: ObservableObject {
         coordinator: Coordinator,
         usersUseCase: UsersUseCase
     ) {
+        self.updatedName = ""
+        self.updatedJob = ""
+        self.isShowingUpdateView = false
         self.coordinator = coordinator
         self.usersUseCase = usersUseCase
+
         usersUseCase.getSelectedUserDetails()
             .sink(
                 receiveCompletion: { _ in },
@@ -27,6 +35,12 @@ final class DetailViewModel: ObservableObject {
                 }
             )
             .store(in: &subscription)
+    }
+
+    func updateDidTap() {
+        withAnimation(.easeOut(duration: 0.3)) {
+            isShowingUpdateView = true
+        }
     }
 
     func backDidTap() {

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ListButton: View {
+struct MuuvButton: View {
     let action: () -> Void
     let label: String
     let color: Color

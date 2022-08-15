@@ -23,12 +23,12 @@ struct ListView: View {
             .padding(.top, 32)
 
             HStack {
-                ListButton(
+                MuuvButton(
                     action: viewModel.backDidTap,
                     label: "back_cta",
                     color: .neutral
                 )
-                ListButton(
+                MuuvButton(
                     action: viewModel.nextDidTap,
                     label: "next_cta",
                     color: .primaryGreen
