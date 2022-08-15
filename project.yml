@@ -1,6 +1,7 @@
 ---
 name: MuuvTest
 options:
+  bundleIdPrefix: com.muuvtest.app
   transitivelyLinkDependencies: true
   deploymentTarget:
     iOS: 14.0
