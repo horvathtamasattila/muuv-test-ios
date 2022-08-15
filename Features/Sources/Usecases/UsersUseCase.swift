@@ -19,7 +19,9 @@ final class UsersUseCase {
     }
 
     func getSelectedUserDetails() -> AnyPublisher<User, ReqresError> {
-        let id = userRepository.selectedUserId!
+        guard let id = userRepository.selectedUserId else {
+            return Fail(error: ReqresError(error: "No selected user")).eraseToAnyPublisher()
+        }
         return reqresClient.getUserById(id)
     }
 

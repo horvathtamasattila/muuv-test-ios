@@ -5,7 +5,12 @@ import ReqresClient
 final class DetailViewModel: ObservableObject {
     @Published var user: User?
 
+    var isShowingLoadingView: Bool {
+        user == nil
+    }
+
     private let coordinator: Coordinator
+    private let usersUseCase: UsersUseCase
     private var subscription: Set<AnyCancellable> = []
 
     init(
@@ -13,6 +18,7 @@ final class DetailViewModel: ObservableObject {
         usersUseCase: UsersUseCase
     ) {
         self.coordinator = coordinator
+        self.usersUseCase = usersUseCase
         usersUseCase.getSelectedUserDetails()
             .sink(
                 receiveCompletion: { _ in },
