@@ -34,10 +34,10 @@ final class ListViewModel: ObservableObject {
         }
     }
 
-    private func loadUsers(page _: Int) {
+    private func loadUsers(page: Int) {
         self.isShowingLoadingView = true
         unowned let unownedSelf = self
-        usersUseCase.getUserList(page: pageNumber)
+        usersUseCase.getUserList(page: page)
             .sink(
                 receiveCompletion: {
                     completion in
