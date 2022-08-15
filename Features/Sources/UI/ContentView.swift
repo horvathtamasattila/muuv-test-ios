@@ -2,8 +2,16 @@ import SwiftUI
 
 public struct ContentView: View {
     public init() {}
+    @StateObject var coordinator = inject(Coordinator.self)
     public var body: some View {
-        ListView()
+        NavigationView {
+            NavigationLink(
+                destination: ListView().hideNavBar(),
+                isActive: coordinator.isShowingList,
+                label: { EmptyView() }
+            )
+        }
+        .navigationViewStyle(.stack)
     }
 }
 

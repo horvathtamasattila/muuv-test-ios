@@ -16,7 +16,24 @@ public extension ReqresClient {
                     print(error)
                     return Result.Publisher([]).eraseToAnyPublisher()
                 }
+            },
+            getUserById: { _ in
+                Result.Publisher(
+                    User.mock
+                ).eraseToAnyPublisher()
             }
+        )
+    }
+}
+
+public extension User {
+    static var mock: User {
+        User(
+            id: 1,
+            email: "johndoe@reqres.com",
+            first_name: "John",
+            last_name: "Doe",
+            avatar: ""
         )
     }
 }

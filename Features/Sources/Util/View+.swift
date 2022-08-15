@@ -8,4 +8,10 @@ extension View {
             self.hidden()
         }
     }
+
+    func hideNavBar() -> some View {
+        navigationBarTitle("")
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+    }
 }

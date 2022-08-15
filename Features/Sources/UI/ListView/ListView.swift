@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ListView: View {
     @StateObject var viewModel = inject(ListViewModel.self)
+    @StateObject var coordinator = inject(Coordinator.self)
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -13,6 +14,9 @@ struct ListView: View {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(viewModel.users) { user in
                         ListElement(name: "\(user.first_name) \(user.last_name)", avatar: user.avatarURL)
+                            .onTapGesture {
+                                viewModel.userDidTap(id: user.id)
+                            }
                     }
                 }
             }
@@ -31,12 +35,23 @@ struct ListView: View {
                 )
             }
             .padding(.horizontal, 16)
+
+            detailLink
         }
         .overlay(
             LoadingView()
                 .visible(viewModel.isShowingLoadingView)
         )
         .alert("alert_title".localized, isPresented: $viewModel.isShowingAlert, actions: {})
+    }
+
+    var detailLink: some View {
+        NavigationLink(
+            destination: DetailView().hideNavBar(),
+            isActive: coordinator.isShowingDetail,
+            label: { EmptyView() }
+        )
+        .navigationViewStyle(.stack)
     }
 }
 

@@ -9,13 +9,18 @@ final class ListViewModel: ObservableObject {
 
     private var pageNumber: Int
     private let usersUseCase: UsersUseCase
+    private let coordinator: Coordinator
     private var subscription: Set<AnyCancellable> = []
-    init(usersUseCase: UsersUseCase) {
+    init(
+        coordinator: Coordinator,
+        usersUseCase: UsersUseCase
+    ) {
         self.users = []
         self.pageNumber = 1
         self.isShowingLoadingView = true
         self.isShowingAlert = false
         self.usersUseCase = usersUseCase
+        self.coordinator = coordinator
 
         loadUsers(page: pageNumber)
     }
@@ -32,6 +37,11 @@ final class ListViewModel: ObservableObject {
             pageNumber -= 1
             loadUsers(page: pageNumber)
         }
+    }
+
+    func userDidTap(id: Int) {
+        usersUseCase.setSelectedUserId(id: id)
+        coordinator.changeView(to: .detail)
     }
 
     private func loadUsers(page: Int) {
