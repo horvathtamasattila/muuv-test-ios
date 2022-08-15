@@ -88,6 +88,7 @@
 		FABCACDA5DF0034319B74338 /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F88A189A881377E7CCA1167 /* Domain.swift */; };
 		FAD9DA665E975D26504D718D /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = 60B83B447E72B58B5D7F1686 /* SwinjectAutoregistration */; };
 		FE44253328AA93D40037665D /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE44253228AA93D40037665D /* Color+.swift */; };
+		FE44253528AA964E0037665D /* ListButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE44253428AA964E0037665D /* ListButton.swift */; };
 		FED572DFBA66C79D6FFBA250 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D20E673C2876FFB3E91339F2 /* Alamofire */; };
 		FF19197D6D4A2660F31CD700 /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = 076BF9F1948EBF6F08AA13F7 /* SwinjectAutoregistration */; };
 		FF8BBE930DF435876D723F15 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0EDAD12B6A5BD5B71CA80A /* ListView.swift */; };
@@ -304,6 +305,7 @@
 		ECD9749C4CA793BB148AE569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4FAF354CFFCF2E3585F1084 /* MuuvTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuuvTest.swift; sourceTree = "<group>"; };
 		FE44253228AA93D40037665D /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		FE44253428AA964E0037665D /* ListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListButton.swift; sourceTree = "<group>"; };
 		FF511779301CDE38A6E58BD3 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -440,6 +442,7 @@
 				4F0EDAD12B6A5BD5B71CA80A /* ListView.swift */,
 				FF511779301CDE38A6E58BD3 /* ListViewModel.swift */,
 				5EA7713473A97BED0E5F55FC /* LoadingView.swift */,
+				FE44253428AA964E0037665D /* ListButton.swift */,
 			);
 			path = ListView;
 			sourceTree = "<group>";
@@ -1046,6 +1049,7 @@
 				E09C245D5A49A5D10C5D41EB /* ContentView.swift in Sources */,
 				5831E34E9FD5808851331E89 /* DI.swift in Sources */,
 				CE72E2CE89B34863E11115B5 /* FeaturesAssembly.swift in Sources */,
+				FE44253528AA964E0037665D /* ListButton.swift in Sources */,
 				B944937770AA219EE7AA0EAD /* ListElement.swift in Sources */,
 				FF8BBE930DF435876D723F15 /* ListView.swift in Sources */,
 				0D9D85858D77EC3A913A6597 /* ListViewModel.swift in Sources */,

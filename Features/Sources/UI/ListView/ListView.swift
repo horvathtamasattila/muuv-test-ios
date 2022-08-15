@@ -18,20 +18,19 @@ struct ListView: View {
             }
             .padding(.top, 32)
 
-            Button(
-                action: {},
-                label: {
-                    Text("next_cta".localized)
-                        .font(.title3)
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity, maxHeight: 48)
-                }
-            )
-            .background(Color.primaryGreen)
-            .cornerRadius(8)
-            .buttonStyle(DefaultButtonStyle())
+            HStack {
+                ListButton(
+                    action: viewModel.backDidTap,
+                    label: "back_cta",
+                    color: .neutral
+                )
+                ListButton(
+                    action: viewModel.nextDidTap,
+                    label: "next_cta",
+                    color: .primaryGreen
+                )
+            }
             .padding(.horizontal, 16)
-            .padding(.bottom, 32)
         }
         .overlay(
             LoadingView()

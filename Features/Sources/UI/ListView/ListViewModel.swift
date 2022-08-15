@@ -17,8 +17,26 @@ final class ListViewModel: ObservableObject {
         self.isShowingAlert = false
         self.usersUseCase = usersUseCase
 
-        unowned let unownedSelf = self
+        loadUsers(page: pageNumber)
+    }
 
+    func nextDidTap() {
+        if pageNumber < 3 {
+            pageNumber += 1
+            loadUsers(page: pageNumber)
+        }
+    }
+
+    func backDidTap() {
+        if pageNumber > 1 {
+            pageNumber -= 1
+            loadUsers(page: pageNumber)
+        }
+    }
+
+    private func loadUsers(page _: Int) {
+        self.isShowingLoadingView = true
+        unowned let unownedSelf = self
         usersUseCase.getUserList(page: pageNumber)
             .sink(
                 receiveCompletion: {
