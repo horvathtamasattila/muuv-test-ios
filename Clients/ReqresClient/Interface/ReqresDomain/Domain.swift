@@ -5,8 +5,8 @@ public extension ReqresClient {
     static let baseURL = "https://\(Bundle.main.object(forInfoDictionaryKey: "REQRES_URL") as! String)"
 }
 
-public struct ReqresResult<T>: Decodable where T: Decodable {
-    public let data: [T]
+public struct ReqresResult: Decodable {
+    public let data: [User]
 }
 
 public struct ReqresError: Error {
