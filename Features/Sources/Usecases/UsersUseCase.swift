@@ -18,8 +18,9 @@ final class UsersUseCase {
         reqresClient.getUserList(page)
     }
 
-    func getUserDetails(id: Int) -> AnyPublisher<User, ReqresError> {
-        reqresClient.getUserById(id)
+    func getSelectedUserDetails() -> AnyPublisher<User, ReqresError> {
+        let id = userRepository.selectedUserId!
+        return reqresClient.getUserById(id)
     }
 
     func setSelectedUserId(id: Int) {
