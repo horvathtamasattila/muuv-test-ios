@@ -5,9 +5,14 @@ import ReqresClient
 final class DetailViewModel: ObservableObject {
     @Published var user: User?
 
+    private let coordinator: Coordinator
     private var subscription: Set<AnyCancellable> = []
 
-    init(usersUseCase: UsersUseCase) {
+    init(
+        coordinator: Coordinator,
+        usersUseCase: UsersUseCase
+    ) {
+        self.coordinator = coordinator
         usersUseCase.getSelectedUserDetails()
             .sink(
                 receiveCompletion: { _ in },
@@ -16,5 +21,9 @@ final class DetailViewModel: ObservableObject {
                 }
             )
             .store(in: &subscription)
+    }
+
+    func backDidTap() {
+        coordinator.changeView(to: .list)
     }
 }
