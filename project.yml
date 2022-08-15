@@ -49,7 +49,7 @@ targets:
       - MuuvTest
     sources:
       - path: Mocks
-        reateIntermediateGroups: true
+        createIntermediateGroups: true
       - path: MuuvTest/Configurations/Mock
         createIntermediateGroups: true
   Development:
