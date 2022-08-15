@@ -1,0 +1,17 @@
+---
+targets:
+  ReqresClient:
+    type: framework
+    platform: iOS
+    sources:
+      - path: Interface
+        createIntermediateGroups: true
+  ReqresClientLive:
+    type: framework
+    platform: iOS
+    sources:
+      - path: Live
+        createIntermediateGroups: true
+    dependencies: 
+      - target: ReqresClient
+      - target: HttpClientLive

@@ -1,7 +1,6 @@
 ---
 name: MuuvTest
 options:
-  bundleIdPrefix: com.muuvtest.app
   transitivelyLinkDependencies: true
   deploymentTarget:
     iOS: 14.0
@@ -29,6 +28,7 @@ configFiles:
   Release: Configs/Release.xcconfig
 include:
     - Clients/HttpClient/HttpClient.yml
+    - Clients/ReqresClient/ReqresClient.yml
     - Features/Features.yml
 packages:
   Alamofire:
@@ -59,6 +59,7 @@ targets:
         createIntermediateGroups: true
     dependencies:
       - target: HttpClientLive
+      - target: ReqresClientLive
       - package: Alamofire
   Production:
     type: application
@@ -70,6 +71,7 @@ targets:
         createIntermediateGroups: true
     dependencies:
       - target: HttpClientLive
+      - target: ReqresClientLive
       - package: Alamofire
 targetTemplates:
   MuuvTest:
@@ -83,6 +85,7 @@ targetTemplates:
         PRODUCT_BUNDLE_IDENTIFIER: com.muuvtest.app
     dependencies:
       - target: HttpClient
+      - target: ReqresClient
       - target: Features
       - package: Swinject
       - package: SwinjectAutoregistration

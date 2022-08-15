@@ -44,5 +44,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>REQRES_URL</key>
+	<string>$(REQRES_URL)</string>
 </dict>
 </plist>
