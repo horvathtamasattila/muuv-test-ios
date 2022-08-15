@@ -34,6 +34,10 @@ final class ListViewModel: ObservableObject {
         }
     }
 
+    func userDidTap(id: Int) {
+        usersUseCase.setSelectedUserId(id: id)
+    }
+
     private func loadUsers(page: Int) {
         self.isShowingLoadingView = true
         unowned let unownedSelf = self

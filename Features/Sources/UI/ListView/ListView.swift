@@ -13,6 +13,9 @@ struct ListView: View {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(viewModel.users) { user in
                         ListElement(name: "\(user.first_name) \(user.last_name)", avatar: user.avatarURL)
+                            .onTapGesture {
+                                viewModel.userDidTap(id: user.id)
+                            }
                     }
                 }
             }

@@ -9,6 +9,10 @@ public struct ReqresResult: Decodable {
     public let data: [User]
 }
 
+public struct UserResult: Decodable {
+    public let data: User
+}
+
 public struct ReqresError: Error {
     public let message: String?
 
