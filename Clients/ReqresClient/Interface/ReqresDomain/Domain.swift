@@ -6,7 +6,7 @@ public extension ReqresClient {
 }
 
 public struct ReqresResult<T>: Decodable where T: Decodable {
-    public let results: [T]
+    public let data: [T]
 }
 
 public struct ReqresError: Error {

@@ -16,7 +16,7 @@ public extension ReqresClient {
                     ]
                 )
                 return client.performRequest(request: request.urlRequest, response: ReqresResult.self)
-                    .map { $0.results }
+                    .map { $0.data }
                     .mapError { error in
                         ReqresError(error: error.message)
                     }
