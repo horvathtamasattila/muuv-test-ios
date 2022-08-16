@@ -17,6 +17,5 @@ struct MuuvButton: View {
         .background(color)
         .cornerRadius(8)
         .buttonStyle(DefaultButtonStyle())
-        .padding(.bottom, 32)
     }
 }

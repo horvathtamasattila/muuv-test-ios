@@ -47,13 +47,18 @@ struct DetailView: View {
                 }
                 .padding(.horizontal, 16)
             }
+            .zIndex(0)
             .visible(!viewModel.isShowingLoadingView)
             LoadingView()
                 .visible(viewModel.isShowingLoadingView)
+                .zIndex(1)
             UserUpdateView(
                 name: $viewModel.updatedName,
-                job: $viewModel.updatedJob
+                job: $viewModel.updatedJob,
+                cancelDidTap: viewModel.updateCancelDidTap,
+                updateDidTap: viewModel.updateUpdateDidTap
             )
+            .zIndex(2)
             .visible(viewModel.isShowingUpdateView)
         }
     }

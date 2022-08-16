@@ -29,7 +29,11 @@ final class DetailViewModel: ObservableObject {
 
         usersUseCase.getSelectedUserDetails()
             .sink(
-                receiveCompletion: { _ in },
+                receiveCompletion: { completion in
+                    if case .failure = completion {
+                        coordinator.changeView(to: .list)
+                    }
+                },
                 receiveValue: { [unowned self] user in
                     self.user = user
                 }
@@ -43,7 +47,36 @@ final class DetailViewModel: ObservableObject {
         }
     }
 
+    func updateCancelDidTap() {
+        hideUpdateView()
+    }
+
+    func updateUpdateDidTap() {
+        guard let user = user else {
+            return
+        }
+        unowned let unownedSelf = self
+        usersUseCase.updateUser(
+            id: user.id,
+            name: updatedName,
+            job: updatedJob
+        )
+        .sink(
+            receiveCompletion: { _ in },
+            receiveValue: { _ in
+                unownedSelf.hideUpdateView()
+            }
+        )
+        .store(in: &subscription)
+    }
+
     func backDidTap() {
         coordinator.changeView(to: .list)
+    }
+
+    private func hideUpdateView() {
+        withAnimation(.easeOut(duration: 0.3)) {
+            isShowingUpdateView = false
+        }
     }
 }
