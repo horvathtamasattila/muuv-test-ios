@@ -18,9 +18,10 @@ public extension ReqresClient {
                 }
             },
             getUserById: { _ in
-                Result.Publisher(
-                    User.mock
-                ).eraseToAnyPublisher()
+                Result.Publisher(User.mock).eraseToAnyPublisher()
+            },
+            updateUser: { _, _, _ in
+                Result.Publisher(UserUpdate.mock).eraseToAnyPublisher()
             }
         )
     }
@@ -35,5 +36,11 @@ public extension User {
             last_name: "Doe",
             avatar: ""
         )
+    }
+}
+
+public extension UserUpdate {
+    static var mock: UserUpdate {
+        UserUpdate(name: "Morpheus", job: "Zion resident")
     }
 }

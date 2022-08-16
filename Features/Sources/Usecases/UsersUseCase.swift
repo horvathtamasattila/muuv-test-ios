@@ -25,6 +25,10 @@ final class UsersUseCase {
         return reqresClient.getUserById(id)
     }
 
+    func updateUser(id: Int, name: String, job: String) -> AnyPublisher<UserUpdate, ReqresError> {
+        reqresClient.updateUser(id, name, job)
+    }
+
     func setSelectedUserId(id: Int) {
         userRepository.selectedUserId = id
     }
